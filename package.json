@@ -7,15 +7,20 @@
     "url": "git+https://github.com/mxwendt/thinking-in-elm.git"
   },
   "scripts": {
-    "dev": "elm-watch hot",
-    "build": "elm-watch make --optimize"
+    "dev:elm": "elm-watch hot",
+    "dev:css": "npx @tailwindcss/cli -i ./main.css -o ./build/main.css --watch",
+    "dev:server": "http-server .",
+    "build": "elm-watch make --optimize && npx @tailwindcss/cli -i ./main.css -o ./build/main.css --minify"
   },
   "devDependencies": {
+    "@tailwindcss/cli": "4.2.1",
     "elm-format": "0.8.8",
-    "elm-watch": "1.2.3"
+    "elm-watch": "1.2.3",
+    "http-server": "14.1.1"
   },
   "dependencies": {
-    "elm": "0.19.1-6"
+    "elm": "0.19.1-6",
+    "tailwindcss": "4.2.1"
   },
   "volta": {
     "node": "24.13.0"
